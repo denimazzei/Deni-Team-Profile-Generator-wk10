@@ -1,0 +1,24 @@
+{
+  "name": "deni-team-profile-generator-wk10",
+  "version": "1.0.0",
+  "description": "Week 10 Team Profile Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denimazzei/Deni-Team-Profile-Generator-wk10.git"
+  },
+  "author": "Deni Mazzei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denimazzei/Deni-Team-Profile-Generator-wk10/issues"
+  },
+  "homepage": "https://github.com/denimazzei/Deni-Team-Profile-Generator-wk10#readme",
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  },
+  "devDependencies": {},
+  "keywords": []
+}

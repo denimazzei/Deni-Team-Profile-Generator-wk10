@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Week 10 Team Profile Generator",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,8 +20,8 @@
   },
   "homepage": "https://github.com/denimazzei/Deni-Team-Profile-Generator-wk10#readme",
   "dependencies": {
-    "inquirer": "^8.1.5"
+    "inquirer": "^8.1.5",
+    "jest": "^27.2.4"
   },
-  "devDependencies": {},
   "keywords": []
 }

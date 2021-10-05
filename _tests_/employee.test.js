@@ -5,100 +5,105 @@ describe ("Employee", () => {
     it ("should be an employee OBJECT with name, id, and email", () => {
         
         //ACT    
-        const testEmployee = new Employee ();
+        const testEmployee = new Employee ("Deni", 829, "test@gmail.com");
 
         //ASSERT
-        expect(typeof(testEmployee)).toBe("object");
+        expect(testEmployee).toEqual({
+            name: "Deni",
+            id: 829,
+            email: "test@gmail.com",
+        });
     });
+});
 
+describe ("name property", () => {
     //ARRANGE
-    it ("should be able to set an employee name", () => {
-        
-        //ACT 
-        const name = "Deni";
-        const testEmployee = new Employee(name);
-        
-        //ASSERT
-        expect(testEmployee.name).toBe(name);
-    });
-
-    //ARRANGE
-    it("should be able to set a string as an id", () => {
+    it("should return name of employee", () => {
 
         //ACT
-        const id = 0829;
-        const testEmployee = new Employee(id);
+        const name = "Deni";
+        const testEmployee = new Employee(name);
 
         //ASSERT
-        expect(testEmployee.id).toBe(id);
+        expect(testEmployee.name).toEqual(name);
     });
+});
 
+describe ("id property", () => {
     //ARRANGE
-    it("should be able to set an email", () => {
+    it("should return id of employee", () => {
+
+        //ACT
+        const id = 829;
+        const testEmployee = new Employee ("Deni", id);
+
+        //ASSERT
+        expect(testEmployee.id).toEqual(id);
+    });
+});
+
+describe ("email property", () => {
+    //ARRANGE
+    it("should return email of employee", () => {
 
         //ACT
         const email = "test@gmail.com";
-        const testEmployee = new Employee(email);
+        const testEmployee = new Employee ("Deni", 829, email);
 
         //ASSERT
-        expect(testEmployee.email).toBe(email);
-    });
-
-});
-
-describe("getName", () => {
-
-    //ARRANGE
-    it("should get name via getName method", () => {
-
-        //ACT
-        const name = "Deni";
-        const testEmployee = new Employee(name);
-
-        //ASSERT
-        expect(testEmployee.getName()).toBe(name);
+        expect(testEmployee.email).toEqual(email);
     });
 });
 
-describe("getID", () => {
-
+describe ("getName method", () => {
     //ARRANGE
-    it("should get id via getID method", () => {
+    it("should return name via getName method", () => {
 
         //ACT
-        const id = 0829;
-        const testEmployee = new Employee(id);
+        const testName = "Deni";
+        const testEmployee = new Employee (testName);
 
         //ASSERT
-        expect(testEmployee.getID()).toBe(id);
+        expect(testEmployee.getName()).toEqual(testName);
     });
 });
 
-describe("getEmail", () => {
-
+describe ("getID method", () => {
     //ARRANGE
-    it("should get email via getEmail method", () => {
-
-         //ACT
-         const email = "test@gmail.com";
-         const testEmployee = new Employee(email);
- 
-         //ASSERT
-         expect(testEmployee.getEmail).toBe(email);
-     });
-});
-
-describe("getRole", () => {
-
-    //ARRANGE
-    it("should use getRole method to return Employee role type", () => {
+    it("should return ID via getID method", () => {
 
         //ACT
-        const role = "Employee";
-        const testEmployee = new Employee("Deni", 0829, "test@gmail.com");
+        const testID = "829";
+        const testEmployee = new Employee ("Deni", testID);
 
         //ASSERT
-        expect(testEmployee.getRole()).toBe(role);
+        expect(testEmployee.getID()).toEqual(testID);
+    });
+});
+
+describe ("getEmail method", () => {
+    //ARRANGE
+    it("should return email address via getEmail method", () => {
+
+        //ACT
+        const testEmail = "test@gmail.com";
+        const testEmployee = new Employee ("Deni", 829, "test@gmail.com");
+
+        //ASSERT
+        expect(testEmployee.getEmail()).toEqual(testEmail);
+    });
+});
+
+describe ("getRole method", () => {
+    //ARRANGE
+    it("should return role title of employee via getRole method", () => {
+
+        //ACT
+        const testEmployee = new Employee ("Deni", 829, "test@gmail.com");
+        const testRole = testEmployee.getRole("Employee");
+
+        //ASSERT
+        expect(testRole).toEqual("Employee");
     });
 });
 

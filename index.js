@@ -64,10 +64,10 @@ function addToRoster() {
                     "no",
                 ],
                 name: "addMore",
-            }]);
+            }])
             //function to add prompts based on member types added
         .then(function({roleName, addMore}) {
-            const newEmployee;
+            var newEmployee;
             if (role === "Engineer") {
                 newEmployee = new Engineer(name, id, email, roleName);
             }else if (role === "Intern") {
@@ -121,7 +121,6 @@ function startHTML() {
 
 //html function to append new employee types to html doc using a promise object
 function addHTML(employee) {
-    return new Promise(function(resolve,reject) {
         const name = employee.getName();
         const role = employee.getRole();
         const id = employee.getID();
@@ -169,7 +168,7 @@ function addHTML(employee) {
             };
             return resolve();
         });
-    });
-}
+};
+
 
 init();

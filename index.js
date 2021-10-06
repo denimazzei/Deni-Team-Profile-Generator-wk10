@@ -6,7 +6,7 @@ const Intern = require("./lib/intern");
 
 const employees = [];
 
-//need function to initialize app and push new team members to roster
+//function to initialize app and push new team members to roster
 function init() {
     startHTML();
     addToRoster();
@@ -41,7 +41,7 @@ function addToRoster() {
         ])
         //function to update role and add, github, school, or office number accordingly.
     .then(function({name, role, id, email}) {
-        const roleName = "";
+        let roleName = "";
         if (role === "Engineer") {
             roleName = "Github URL";
         }else if (role ==="Intern") {
@@ -67,7 +67,7 @@ function addToRoster() {
             }])
             //function to add prompts based on member types added
         .then(function({roleName, addMore}) {
-            var newEmployee;
+            let newEmployee;
             if (role === "Engineer") {
                 newEmployee = new Engineer(name, id, email, roleName);
             }else if (role === "Intern") {
@@ -80,9 +80,9 @@ function addToRoster() {
             addHTML(newEmployee)
             .then(function() {
                 if(addMore === "yes") {
-                    addEmployee();
+                    addHTML();
                 }else {
-                    finishHtml();
+                    completeHtml();
                 }
             });
         });
@@ -121,6 +121,7 @@ function startHTML() {
 
 //html function to append new employee types to html doc using a promise object
 function addHTML(employee) {
+    return new Promise (function(resolve, reject) {
         const name = employee.getName();
         const role = employee.getRole();
         const id = employee.getID();
@@ -168,7 +169,23 @@ function addHTML(employee) {
             };
             return resolve();
         });
+    });    
 };
+
+//need to close out the HTML doc with closing brackets 
+function completeHtml () {
+    const html = `</div>
+    </div>
+    </div>
+    </body>
+    </html>`;
+    fs.writeFile("./dist/index.html", html, function(err) {
+        if(err) {
+            console.log(err);
+        }
+    });
+    console.log("complete")
+}
 
 
 init();

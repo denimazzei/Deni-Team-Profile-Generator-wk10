@@ -17,6 +17,16 @@ describe ("Engineer object", () => {
     });
 
     //ARRANGE
+    it("should use getGithub method to return github url", () => {
+        
+        //ACT
+        const testEngineer = new Engineer ("Deni", 829, "test@gmail.com", "denimazzei");
+
+        //ASSERT
+        expect(testEngineer.getGithub()).toEqual("denimazzei");
+    });
+
+    //ARRANGE
     it("should use getRole method to override role to Engineer", () => {
         
         //ACT

@@ -17,6 +17,16 @@ describe ("Intern object", () => {
     });
 
     //ARRANGE
+    it("should use getSchool method to return school name", () => {
+        
+        //ACT
+        const testIntern = new Intern ("Deni", 829, "test@gmail.com", "ABC");
+
+        //ASSERT
+        expect(testIntern.getSchool()).toEqual("ABC");
+    });
+
+    //ARRANGE
     it("should use getRole method to override role to Intern", () => {
         
         //ACT

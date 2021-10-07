@@ -12,7 +12,8 @@ This program is not publicly deployed, so it will need the following:
   2. Uses the Inquirer package.
   3. Uses the Jest package for a suite of unit tests.
 
-Here is a screenrecording https://drive.google.com/file/d/1QN4hreuprIj9HzJKMIaadmTnU7T4czx7/view?usp=sharing
+Here is a quick screenrecording walkthrough initializing app: https://drive.google.com/file/d/1QN4hreuprIj9HzJKMIaadmTnU7T4czx7/view?usp=sharing
+Here is a demo of all 4 tests passing: https://drive.google.com/file/d/1GpwPCdaqPMw0Re5_phb3n2OueIRoA2Da/view?usp=sharing
 
 ## Example
 
